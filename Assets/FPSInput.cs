@@ -7,7 +7,7 @@ using UnityEngine;
 
 public class FPSInput : MonoBehaviour
 {
-    public float speed = 10.0f;
+    public float speed = 18.0f;
     public float gravity = -9.8f;
 
     private CharacterController _characterController;
