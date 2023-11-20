@@ -23,13 +23,14 @@ public class ReactiveTarget : MonoBehaviour
         if (behavior != null)
         {
             behavior.setAlive(false);
+            ScoreScript.scoreValue += 1;
         }
         StartCoroutine(Die());
     }
 
     public IEnumerator Die()
     {
-         this.transform.Rotate(-75, 0, 0);
+        this.transform.Rotate(-75, 0, 0);
 
         yield return new WaitForSeconds(1.5f);
 
