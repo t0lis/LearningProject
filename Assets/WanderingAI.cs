@@ -10,18 +10,18 @@ public class WanderingAI : MonoBehaviour
     public float speed = 3.0f;
     public float obstacleRange = 5.0f;
 
-    private bool _isAlive;
+    public bool isAlive;
 
     // Start is called before the first frame update
     void Start()
     {
-        _isAlive = true;
+        isAlive = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (_isAlive)
+        if (isAlive)
         {
             transform.Translate(0, 0, speed * Time.deltaTime);
 
@@ -52,6 +52,6 @@ public class WanderingAI : MonoBehaviour
 
     public void setAlive(bool isAlive)
     {
-        _isAlive = isAlive;
+        this.isAlive = isAlive;
     }
 }

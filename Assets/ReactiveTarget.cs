@@ -20,12 +20,15 @@ public class ReactiveTarget : MonoBehaviour
     {
         WanderingAI behavior = GetComponent<WanderingAI>();
 
-        if (behavior != null)
+        if (behavior.isAlive)
         {
-            behavior.setAlive(false);
-            ScoreScript.scoreValue += 1;
+            if (behavior != null)
+            {
+                behavior.setAlive(false);
+                ScoreScript.scoreValue += 1;
+            }
+            StartCoroutine(Die());
         }
-        StartCoroutine(Die());
     }
 
     public IEnumerator Die()
